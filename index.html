@@ -39,7 +39,28 @@
     <!-- You should start doing handlebar stuff here -->
     <!-- Your Code Here -->
 
-    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+    <script id="apartments-template" type="text/x-handlebars-template">
+        {{#each apartments}}
+        <div class="result">
+            <img src="{{this.img}}">
+            <ul class="details">
+                <li>{{this.address}}</li>
+                <li>Price: {{this.price}}$</li>
+                <li>Rooms: {{this.rooms}}</li> 
+                <li>Features: {{#each this.features}}{{this}}, {{/each}}</li>
+                {{#if parking}}
+                  <li>Parking available</li>
+                {{/if}}
+                {{#if immediate}}
+                    {{this.contactDetails.name}} -- {{this.contactDetails.email}}
+                {{/if}}
+            </ul>
+        </div>
+        {{/each}}
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+        crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.js"></script>
     <script src="apt-data.js"></script>
     <script src="apt-filter.js"></script>

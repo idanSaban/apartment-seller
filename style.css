@@ -66,12 +66,9 @@ label{
 .result{
     font-family: 'Raleway', sans-serif;
     display: grid;
-    grid-template-columns: 350px 90px 280px;
+    grid-template-columns: 350px 400px;
     grid-template-areas: 
-    "i la a"
-    "i lpr p"
-    "i lr r"
-    "i lpark park";
+    "i d";
     box-shadow: 1px 1px 3px #0a1612;
     margin: 20px;
     padding: 20px;
@@ -79,7 +76,9 @@ label{
     background-color: #443729;
     align-items: center;
 }
-
+.details{
+    grid-area: "d";
+}
 .check-group{
     height: 35px;
 }
@@ -110,45 +109,6 @@ button:active{background-color: #443729;}
     border-radius: 5px;
 }
 
-.result>.label{
-    font-weight: bold;
-}
-
-.result>.l-addr{
-    grid-area: la;
-}
-
-.result>.l-price{
-    grid-area: lpr;
-}
-
-.result>.l-rooms{
-    grid-area: lr;
-}
-
-.result>.l-park{
-    grid-area: lpark;
-}
-
-.result>.l-immediate{}
-
-.result>.address{
-    grid-area: a;
-}
-
-.price{
-    grid-area: p;
-}
-
-.result>.rooms {
-    grid-area: r;
-}
-
-.result>.parking{
-    grid-area: park;
-}
-
-.result>.immediate{}
 
 .no-match{
     color: #DD6300;
